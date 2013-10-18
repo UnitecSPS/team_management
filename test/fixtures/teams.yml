@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  founded_at: 2013-10-17 20:48:04
+  country: MyString
+  first_div: false
+  address: MyText
+  phone: 1
+
+two:
+  name: MyString
+  founded_at: 2013-10-17 20:48:04
+  country: MyString
+  first_div: false
+  address: MyText
+  phone: 1
