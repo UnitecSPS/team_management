@@ -1,0 +1,39 @@
+<div>
+  <% if @team.errors.any? %>
+    <b><em>HAY ERRORES:</em></b>
+    <p>
+      <%= @team.errors.full_messages.join(", ") %>
+    <p>
+  <% end %>
+</div>
+<div id="form">
+  <%= form_for @team do |f| %>
+    <div>
+      <%= f.label :name, "Nombre" %>
+      <%= f.text_field :name %>
+    </div>
+    <div>
+      <%= f.label :phone, "Telefono" %>
+      <%= f.text_field :phone %>
+    </div>
+    <div>
+      <%= f.label :founded_at, "Fundado en" %>
+      <%= f.datetime_select :founded_at %>
+    </div>
+    <div>
+      <%= f.label :country, "Pais" %>
+      <%= f.text_field :country %>
+    </div>
+    <div>
+      <%= f.label :first_div, "Primera division" %>
+      <%= f.check_box :first_div %>
+    </div>
+    <div>
+      <%= f.label :address, "Direccion" %>
+      <%= f.text_area :address %>
+    </div>
+    <div>
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>
