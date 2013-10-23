@@ -22,7 +22,7 @@
     </div>
     <div>
       <%= f.label :country, "Pais" %>
-      <%= f.text_field :country %>
+      <%= f.select :country, Country.all %>
     </div>
     <div>
       <%= f.label :first_div, "Primera division" %>
@@ -33,7 +33,12 @@
       <%= f.text_area :address %>
     </div>
     <div>
-      <%= f.submit %>
+      <table>
+        <tr>
+          <td><%= f.submit %></td>
+          <td><%= link_to "Cancelar", teams_path %></td>
+        </tr>
+      </table>
     </div>
   <% end %>
 </div>

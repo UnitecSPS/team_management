@@ -4,6 +4,7 @@ class TeamsController < ApplicationController
   end
 
   def show
+    @team = Team.find(params[:id])
   end
 
   def new
@@ -31,6 +32,16 @@ class TeamsController < ApplicationController
       redirect_to teams_path
     else
       render :edit
+    end
+  end
+
+  def destroy
+    @team = Team.find(params[:id])
+
+    if @team.destroy
+      redirect_to teams_path
+    else
+      render :show
     end
   end
 end

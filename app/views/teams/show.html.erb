@@ -1,0 +1,37 @@
+<h1><%= @team.name %></h1>
+<p>
+  <b>Telefono:</b>
+  <%= @team.phone %>
+</p>
+<p>
+  <b>Pais:</b>
+  <%= @team.country %>
+</p>
+<p>
+  <b>Fundado en:</b>
+  <%= @team.founded_at.strftime('%b %-d, %Y, %l:%M %P') %>
+</p>
+<p>
+  <b>Direccion:</b>
+  <%= @team.address %>
+</p>
+<p>
+  <% if @team.first_div? %>
+    <b><em>EQUIPO DE PRIMERA DIVISION</em></b>
+  <% else %>
+    <b><em>EQUIPO DE SEGUNDA DIVISION O MENOR</em></b>
+  <% end %>
+</p>
+<p>
+  <table>
+    <tr>
+      <td>
+        <%= link_to "Regresar", teams_path %>
+      </td>
+      <td>
+        <%= link_to "ELIMINAR", @team, method: :delete, confirm: "Estas seguro?" %>
+      </td>
+    </tr>
+  </table>
+</p>
+

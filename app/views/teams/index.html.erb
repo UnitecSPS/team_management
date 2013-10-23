@@ -11,9 +11,9 @@
     <% @teams.each do |team| %>
       <tr>
         <td><%= team.id %></td>
-        <td><%= team.name %></td>
+        <td><%= link_to team.name, team %></td>
         <td><%= team.country %></td>
-        <td><%= team.founded_at %></td>
+        <td><%= team.founded_at.strftime('%b %-d, %Y') %></td>
         <td><%= link_to "Edit", edit_team_path(team) %></td>
       </tr>
     <% end %>
