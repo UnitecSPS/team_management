@@ -16,11 +16,18 @@
   <%= @team.address %>
 </p>
 <p>
-  <% if @team.first_div? %>
-    <b><em>EQUIPO DE PRIMERA DIVISION</em></b>
-  <% else %>
-    <b><em>EQUIPO DE SEGUNDA DIVISION O MENOR</em></b>
-  <% end %>
+  <b><em><%= division_description %></em></b>
+</p>
+<p>
+  <h2>PLANTILLA DE JUGADORES</h2>
+  <ul>
+    <% @players.each do |player| %>
+      <li>
+        <%= player.number %>
+        <%= player.name %>
+      </li>
+    <% end %>
+  </ul>
 </p>
 <p>
   <table>

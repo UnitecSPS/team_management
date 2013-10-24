@@ -1,0 +1,48 @@
+<div>
+  <% if @player.errors.any? %>
+    <b><em>HAY ERRORES:</em></b>
+    <p>
+      <%= @player.errors.full_messages.join(", ") %>
+    <p>
+  <% end %>
+</div>
+<div id="form">
+  <%= form_for @player do |f| %>
+    <div>
+      <%= f.label :name, "Nombre" %>
+      <%= f.text_field :name %>
+    </div>
+    <div>
+      <%= f.label :number, "Number" %>
+      <%= f.number_field :number %>
+    </div>
+    <div>
+      <%= f.label :country, "Pais" %>
+      <%= f.select :country, Country.all %>
+    </div>
+    <div>
+      <%= f.label :position, "Posicion" %>
+      <%= f.select :position, Player.positions %>
+    </div>
+    <div>
+      <%= f.label :team_id, "Equipo" %>
+      <%= f.select :team_id, options_from_collection_for_select( Team.all, :id, :name) %>
+    </div>
+    <div>
+      <%= f.label :goals, "Goles" %>
+      <%= f.number_field :goals %>
+    </div>
+    <div>
+      <%= f.label :year_of_birth, "Año de Nacimiento" %>
+      <%= f.number_field :year_of_birth %>
+    </div>
+    <div>
+      <table>
+        <tr>
+          <td><%= f.submit %></td>
+          <td><%= link_to "Cancelar", players_path %></td>
+        </tr>
+      </table>
+    </div>
+  <% end %>
+</div>

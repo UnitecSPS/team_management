@@ -1,2 +1,27 @@
-<h1>Players#index</h1>
-<p>Find me in app/views/players/index.html.erb</p>
+<h1>LISTADO DE JUGADORES</h1>
+<div id="players_list">
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Posicion</th>
+      <th>Equipo</th>
+      <th>Pais</th>
+      <th></th>
+    </tr>
+    <% @players.each do |player| %>
+      <tr>
+        <td><%= player.id %></td>
+        <td><%= link_to player.name, player %></td>
+        <td><%= player.position %></td>
+        <td><%= player.team.name %></td>
+        <td><%= player.country %></td>
+        <td><%= link_to "Edit", edit_player_path(player) %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+<ul>
+  <li><%= link_to "New Player", new_player_path %></li>
+  <li><%= link_to "Home", root_path %></li>
+</ul>

@@ -4,4 +4,13 @@ class Team < ActiveRecord::Base
   validates_uniqueness_of :phone, allow_blank: true
 
   has_many :players
+
+  #TEST METHOD...NOT USE!
+  def division_label
+    if first_div?
+      "Patito"
+    else
+      "pollito"
+    end
+  end
 end
