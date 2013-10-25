@@ -2,7 +2,9 @@ TeamManagement::Application.routes.draw do
 
   root :to => 'home#index'
   resources :teams
-  resources :players
+  resources :players do
+    resources :performances
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

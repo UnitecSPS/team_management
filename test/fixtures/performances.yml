@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  detail: MyText
+  minutes: 1
+  goals: 1
+  assists: 1
+  yellows: 1
+  red: false
+  initial: false
+  distance: 1
+  player: 
+
+two:
+  detail: MyText
+  minutes: 1
+  goals: 1
+  assists: 1
+  yellows: 1
+  red: false
+  initial: false
+  distance: 1
+  player: 

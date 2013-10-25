@@ -5,6 +5,7 @@ class PlayersController < ApplicationController
 
   def show
     @player = Player.find(params[:id])
+    @performances = @player.performances.order("created_at DESC")
   end
 
   def new

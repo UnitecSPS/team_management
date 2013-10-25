@@ -1,2 +1,45 @@
 <h1><%= @player.name %></h1>
-<p>Find me in app/views/players/show.html.erb</p>
+<p>
+  <% if @performances.any? %>
+    <h2>Performances</h2>
+    <div>
+      <table>
+        <tr>
+          <th>Partido</th>
+          <th>Goles</th>
+          <th>Asistencias</th>
+          <th>Minutos</th>
+          <th>Distancia</th>
+          <th>Titular</th>
+          <th>Amarillas</th>
+          <th>Roja</th>
+        </tr>
+        <% @performances.each do |perfo| %>
+          <tr>
+            <td><%= perfo.detail %></td>
+            <td><%= perfo.goals %></td>
+            <td><%= perfo.assists %></td>
+            <td><%= perfo.minutes %></td>
+            <td><%= perfo.distance %></td>
+            <td><%= perfo.initial_text %></td>
+            <td><%= perfo.yellows %></td>
+            <td><%= perfo.red_text %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  <% else %>
+    <em>NO TIENE PERFORMANCES</em>
+  <% end %>
+</p>
+<div>
+  <%= form_for [@player, @player.performances.build] do |f| %>
+    <p>
+      <%= f.label :detail, "Partido" %>
+      <%= f.text_field :detail %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>
+</div>
