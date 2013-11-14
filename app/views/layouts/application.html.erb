@@ -7,8 +7,38 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<!-- Header -->
+  <div id="header">
+    <div class="shell">
+      <!-- Logo -->
+      <h1 id="logo"><%= link_to "TEAM MANAGEMENT", root_path %></h1>
+      <!-- End Logo -->
+    </div>
+  </div>
+  <!-- End Header -->
+  <!-- Navigation -->
+  <div id="navigation">
+    <div class="shell">
+      <div class="cl">&nbsp;</div>
+      <ul>
+        <li><%= link_to "Teams", teams_path %></li>
+        <li><%= link_to "Read Only", readonly_teams_path %></li>
+        <li><%= link_to "Players", players_path %></li>
+      </ul>
+    </div>
+  </div>
+  <!-- End Navigation -->
+  <div id="heading">
+    <div class="shell">
+      <div id="heading-cnt">
+        <div id="heading-box">
+          <div id="heading-box-cnt">
+            <div class="cl">&nbsp;</div>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
