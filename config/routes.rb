@@ -1,7 +1,15 @@
 TeamManagement::Application.routes.draw do
 
   root :to => 'home#index'
-  resources :teams
+  resources :teams do
+    member do
+      get "stadistics"
+    end
+    collection do
+      get "readonly"
+    end
+  end
+
   resources :players do
     resources :performances
   end

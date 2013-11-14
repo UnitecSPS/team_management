@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131025021841) do
+ActiveRecord::Schema.define(:version => 20131107031528) do
 
   create_table "performances", :force => true do |t|
     t.text     "detail"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(:version => 20131025021841) do
 
   create_table "players", :force => true do |t|
     t.string   "name"
-    t.integer  "number"
+    t.integer  "jersey_number"
     t.integer  "goals"
     t.string   "position"
     t.integer  "year_of_birth"
@@ -48,8 +48,9 @@ ActiveRecord::Schema.define(:version => 20131025021841) do
     t.boolean  "first_div"
     t.text     "address"
     t.integer  "phone"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
+    t.string   "stadium_name", :default => "No Ground"
   end
 
 end

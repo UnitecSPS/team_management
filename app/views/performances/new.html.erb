@@ -1,2 +1,6 @@
-<h1>Performances#new</h1>
-<p>Find me in app/views/performances/new.html.erb</p>
+<h1>CREAR UNA PERFORMANCE</h1>
+<div>
+  <%= form_for [@player, @player.performances.build] do |f| %>
+    <%= render partial: "fields", locals:{builder: f} %>
+  <% end %>
+</div>

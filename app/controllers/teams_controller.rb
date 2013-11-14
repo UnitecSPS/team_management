@@ -5,7 +5,7 @@ class TeamsController < ApplicationController
 
   def show
     @team = Team.find(params[:id])
-    @players = @team.players.order("number ASC")
+    @players = @team.players.order("jersey_number ASC")
   end
 
   def new
@@ -44,5 +44,13 @@ class TeamsController < ApplicationController
     else
       render :show
     end
+  end
+
+  def stadistics
+    @team = Team.find(params[:id])
+  end
+
+  def readonly
+    @teams = Team.all
   end
 end

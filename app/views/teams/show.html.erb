@@ -23,7 +23,7 @@
   <ul>
     <% @players.each do |player| %>
       <li>
-        <%= player.number %>
+        <%= player.jersey_number %>
         <%= player.name %>
       </li>
     <% end %>
@@ -32,6 +32,9 @@
 <p>
   <table>
     <tr>
+      <td>
+        <%= link_to "Estadistica", stadistics_team_path(@team) %>
+      </td>
       <td>
         <%= link_to "Regresar", teams_path %>
       </td>

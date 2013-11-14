@@ -5,6 +5,10 @@ class Team < ActiveRecord::Base
 
   has_many :players
 
+  def self.test
+    "TEST"
+  end
+  
   #TEST METHOD...NOT USE!
   def division_label
     if first_div?

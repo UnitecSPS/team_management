@@ -1,0 +1,22 @@
+<h1>LISTADO DE TEAMS</h1>
+<div id="team_list">
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Pais</th>
+      <th>Fundado</th>
+    </tr>
+    <% @teams.each do |team| %>
+      <tr>
+        <td><%= team.id %></td>
+        <td><%= team.name %></td>
+        <td><%= team.country %></td>
+        <td><%= team.founded_at.strftime('%b %-d, %Y') %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+<ul>
+  <li><%= link_to "Home", root_path %></li>
+</ul>
